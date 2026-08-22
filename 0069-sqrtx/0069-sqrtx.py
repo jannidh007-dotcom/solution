@@ -1,0 +1,19 @@
+class Solution(object):
+    def mySqrt(self, x):
+       left=0
+       right=x
+       while left<=right:
+        mid=(right+left)//2
+        if mid*mid<=x:
+            answer=mid
+            left=mid+1
+        else:
+            right=mid-1
+       return answer         
+
+
+s=Solution       
+
+# Synced seamlessly with LeetHub Pro
+# Pro features: https://bit.ly/leethubpro | Free version: https://bit.ly/leethubv4
+# Get it here: https://chromewebstore.google.com/detail/bcilpkkbokcopmabingnndookdogmbna
