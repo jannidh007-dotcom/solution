@@ -5,18 +5,17 @@
 #         self.left = left
 #         self.right = right
 class Solution(object):
-    def inorderTraversal(self, root): 
-        result = []
-
+    def inorderTraversal(self, root):
+        result=[]
         def inorder(node):
-            if node:
-                inorder(node.left)
-                result.append(node.val)
-                inorder(node.right)
-
+            if node is None:
+                return
+            inorder(node.left)
+            result.append(node.val)
+            inorder(node.right)
         inorder(root)
+        return result    
 
-        return result
         
 
 # Synced seamlessly with LeetHub Pro
