@@ -6,17 +6,15 @@
 #         self.right = right
 class Solution(object):
     def isSameTree(self, p, q):
-        if p is None and q is None:
+        if q is None and p is None:
             return True
-
-        if p is None or q is None:
+        if q is None or p is None:
             return False
-
-        if p.val != q.val:
+        if q.val!=p.val:
             return False
+        return self.isSameTree(q.left,p.left) and self.isSameTree(q.right,p.right)
+s=Solution()           
 
-        return self.isSameTree(p.left, q.left) and self.isSameTree(p.right, q.right)
-  
 
 # Synced seamlessly with LeetHub Pro
 # Pro features: https://bit.ly/leethubpro | Free version: https://bit.ly/leethubv4
