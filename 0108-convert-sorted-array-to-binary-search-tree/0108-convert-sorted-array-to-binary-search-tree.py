@@ -6,28 +6,17 @@
 #         self.right = right
 class Solution(object):
     def sortedArrayToBST(self, nums):
-        def build(left, right):
+        if not nums:
+            return None
+        mid=len(nums)//2
+        root=TreeNode(nums[mid])
+        root.left=self.sortedArrayToBST(nums[:mid])
+        root.right=self.sortedArrayToBST(nums[mid+1:])
+        return root     
             
-            # Base case
-            if left > right:
-                return None
             
-            # Find middle element
-            mid = (left + right) // 2
             
-            # Make middle element the root
-            root = TreeNode(nums[mid])
             
-            # Build left subtree
-            root.left = build(left, mid - 1)
-            
-            # Build right subtree
-            root.right = build(mid + 1, right)
-            
-            return root
-        
-        return build(0, len(nums) - 1)
-        
 
 # Synced seamlessly with LeetHub Pro
 # Pro features: https://bit.ly/leethubpro | Free version: https://bit.ly/leethubv4
