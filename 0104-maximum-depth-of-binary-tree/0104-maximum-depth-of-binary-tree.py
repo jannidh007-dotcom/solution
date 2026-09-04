@@ -6,7 +6,6 @@
 #         self.right = right
 class Solution(object):
     def maxDepth(self, root):
-
         if root is None:
             return 0
 
@@ -14,7 +13,7 @@ class Solution(object):
         right = self.maxDepth(root.right)
 
         return 1 + max(left, right)
-        
+
         
         
 
